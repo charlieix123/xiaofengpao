@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #87CEEB; /* Sky blue background */
             color: #333;
         }
         .container {
@@ -80,12 +80,41 @@
             margin-top: 40px;
             font-style: italic;
         }
+        .banner {
+            background-color: #ff0000; /* Red background */
+            padding: 20px 0;
+            text-align: center;
+        }
+        .banner h1 {
+            color: #ffffff; /* White text */
+            margin: 0;
+        }
+        .content {
+            background-color: #87CEEB; /* Sky blue background */
+            padding: 20px;
+        }
+        .buy-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .buy-heading {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .buy-subheading {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="banner">
         <h1>Mini Turbo Fan</h1>
-        <h2>Why Choose Our Product?</h2>
+    </div>
+    <div class="content">
+        <div class="container">
+            <h2>Why Choose Our Product?</h2>
         
         <div class="product-gallery">
             <div class="product-item">
@@ -134,9 +163,14 @@
             </div>
         </div>
 
-        <a href="#" class="buy-now">Buy Now</a>
+        <div class="buy-section">
+            <p class="buy-heading">Ready to Buy?</p>
+            <p class="buy-subheading">Get your hands on our amazing product now and experience the difference!</p>
+            <a href="#" class="buy-now">Buy Now</a>
+        </div>
 
         <p class="store-address">Visit our store: anannananana</p>
+        </div>
     </div>
 </body>
 </html>
