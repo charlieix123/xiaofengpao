@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #F5F5F5; /* 浅灰色背景 */
+            background-color: #F5F5F5;
             color: #333;
         }
         .container {
@@ -37,6 +37,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
         .product-image:hover {
             transform: scale(1.05);
@@ -59,13 +60,14 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
         }
         .buy-now {
             display: block;
             width: 200px;
             margin: 40px auto;
             padding: 10px 20px;
-            background-color: #4A90E2; /* 匹配banner的蓝色 */
+            background-color: #4A90E2;
             color: white;
             text-align: center;
             text-decoration: none;
@@ -74,7 +76,7 @@
             transition: background-color 0.3s ease;
         }
         .buy-now:hover {
-            background-color: #3A7BC8; /* 稍深的蓝色用于悬停效果 */
+            background-color: #3A7BC8;
         }
         .store-address {
             text-align: center;
@@ -82,16 +84,16 @@
             font-style: italic;
         }
         .banner {
-            background-color: #ff0000; /* 红色背景 */
+            background-color: #ff0000;
             padding: 20px 0;
             text-align: center;
         }
         .banner h1 {
-            color: #ffffff; /* 白色文字 */
+            color: #ffffff;
             margin: 0;
         }
         .content {
-            background-color: #87CEEB; /* 天蓝色背景 */
+            background-color: #87CEEB;
             padding: 20px;
         }
         .buy-section {
@@ -119,6 +121,41 @@
                 max-width: 100%;
             }
         }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            max-height: 80%;
+            object-fit: contain;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -129,61 +166,101 @@
         <div class="container">
             <h2>Why Choose Our Product?</h2>
         
-        <div class="product-gallery">
-            <div class="product-item">
-                <img src="111.jpg" height=200&width=200" alt="Ultra-high wind" class="product-image">
-                <p class="product-description">Ultra-high wind<br>Ultra-quiet<br>Small and portable</p>
+            <div class="product-gallery">
+                <div class="product-item">
+                    <img src="111.jpg" height=200&width=200" alt="Ultra-high wind" class="product-image">
+                    <p class="product-description">Ultra-high wind<br>Ultra-quiet<br>Small and portable</p>
+                </div>
+                <div class="product-item">
+                    <img src="222.jpg" height=200&width=200" alt="Long battery life" class="product-image">
+                    <p class="product-description">15 hours long battery life</p>
+                </div>
+                <div class="product-item">
+                    <img src="333.jpg" height=200&width=200" alt="Adjustable wind" class="product-image">
+                    <p class="product-description">Personality wind, adjust at will</p>
+                </div>
+                <div class="product-item">
+                    <img src="444.jpg" height=200&width=200" alt="Hand-held fan" class="product-image">
+                    <p class="product-description">Hand-held fan</p>
+                </div>
+                <div class="product-item">
+                    <img src="555.jpg" height=200&width=200" alt="Pocket-sized" class="product-image">
+                    <p class="product-description">Easy to fit in your pocket</p>
+                </div>
+                <div class="product-item">
+                    <img src="666.jpg" height=200&width=200" alt="Ice Feeling Wind" class="product-image">
+                    <p class="product-description">Ice Feeling Wind</p>
+                </div>
+                <div class="product-item">
+                    <img src="777.jpg" height=200&width=200" alt="Fashion aesthetics" class="product-image">
+                    <p class="product-description">Fashion aesthetics</p>
+                </div>
+                <div class="product-item">
+                    <img src="888.jpg" height=200&width=200" alt="How it works" class="product-image">
+                    <p class="product-description">How it works</p>
+                </div>
             </div>
-            <div class="product-item">
-                <img src="222.jpg" height=200&width=200" alt="Long battery life" class="product-image">
-                <p class="product-description">15 hours long battery life</p>
-            </div>
-            <div class="product-item">
-                <img src="333.jpg" height=200&width=200" alt="Adjustable wind" class="product-image">
-                <p class="product-description">Personality wind, adjust at will</p>
-            </div>
-            <div class="product-item">
-                <img src="444.jpg" height=200&width=200" alt="Hand-held fan" class="product-image">
-                <p class="product-description">Hand-held fan</p>
-            </div>
-            <div class="product-item">
-                <img src="555.jpg" height=200&width=200" alt="Pocket-sized" class="product-image">
-                <p class="product-description">Easy to fit in your pocket</p>
-            </div>
-            <div class="product-item">
-                <img src="666.jpg" height=200&width=200" alt="Ice Feeling Wind" class="product-image">
-                <p class="product-description">Ice Feeling Wind</p>
-            </div>
-            <div class="product-item">
-                <img src="777.jpg" height=200&width=200" alt="Fashion aesthetics" class="product-image">
-                <p class="product-description">Fashion aesthetics</p>
-            </div>
-            <div class="product-item">
-                <img src="888.jpg" height=200&width=200" alt="How it works" class="product-image">
-                <p class="product-description">How it works</p>
-            </div>
-        </div>
 
-        <h2>Available Colors</h2>
-        <div class="color-section">
-            <div class="color-item">
-                <img src="999.jpg" height=300&width=400" alt="Star ash" class="color-image">
-                <p>Star ash</p>
+            <h2>Available Colors</h2>
+            <div class="color-section">
+                <div class="color-item">
+                    <img src="999.jpg" height=300&width=400" alt="Star ash" class="color-image">
+                    <p>Star ash</p>
+                </div>
+                <div class="color-item">
+                    <img src="787.jpg" height=300&width=400" alt="Rice white" class="color-image">
+                    <p>Rice white</p>
+                </div>
             </div>
-            <div class="color-item">
-                <img src="787.jpg" height=300&width=400" alt="Rice white" class="color-image">
-                <p>Rice white</p>
+
+            <div class="buy-section">
+                <p class="buy-heading">Ready to Buy?</p>
+                <p class="buy-subheading">Get your hands on our amazing product now and experience the difference!</p>
+                <a href="#" class="buy-now">Buy Now</a>
             </div>
-        </div>
 
-        <div class="buy-section">
-            <p class="buy-heading">Ready to Buy?</p>
-            <p class="buy-subheading">Get your hands on our amazing product now and experience the difference!</p>
-            <a href="#" class="buy-now">Buy Now</a>
-        </div>
-
-        <p class="store-address">Visit our store: anannananana</p>
+            <p class="store-address">Visit our store: anannananana</p>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("imageModal");
+
+        // Get the image and insert it inside the modal
+        var modalImg = document.getElementById("modalImage");
+
+        // Get all images with class "product-image" or "color-image"
+        var images = document.querySelectorAll(".product-image, .color-image");
+
+        // Attach click event to all images
+        images.forEach(function(img) {
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
