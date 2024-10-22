@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #87CEEB; /* Sky blue background */
+            background-color: #F5F5F5; /* 浅灰色背景 */
             color: #333;
         }
         .container {
@@ -22,7 +22,7 @@
         }
         .product-gallery {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-bottom: 40px;
         }
@@ -31,7 +31,8 @@
         }
         .product-image {
             width: 100%;
-            height: 200px;
+            height: auto;
+            max-height: 200px;
             object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -64,7 +65,7 @@
             width: 200px;
             margin: 40px auto;
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #4A90E2; /* 匹配banner的蓝色 */
             color: white;
             text-align: center;
             text-decoration: none;
@@ -73,7 +74,7 @@
             transition: background-color 0.3s ease;
         }
         .buy-now:hover {
-            background-color: #45a049;
+            background-color: #3A7BC8; /* 稍深的蓝色用于悬停效果 */
         }
         .store-address {
             text-align: center;
@@ -81,16 +82,16 @@
             font-style: italic;
         }
         .banner {
-            background-color: #ff0000; /* Red background */
+            background-color: #ff0000; /* 红色背景 */
             padding: 20px 0;
             text-align: center;
         }
         .banner h1 {
-            color: #ffffff; /* White text */
+            color: #ffffff; /* 白色文字 */
             margin: 0;
         }
         .content {
-            background-color: #87CEEB; /* Sky blue background */
+            background-color: #87CEEB; /* 天蓝色背景 */
             padding: 20px;
         }
         .buy-section {
@@ -105,6 +106,18 @@
         .buy-subheading {
             font-size: 16px;
             margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .color-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            .color-item {
+                margin-bottom: 20px;
+            }
+            .color-image {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -166,7 +179,7 @@
         <div class="buy-section">
             <p class="buy-heading">Ready to Buy?</p>
             <p class="buy-subheading">Get your hands on our amazing product now and experience the difference!</p>
-            <a href="https://www.facebook.com/profile.php?id=100010181617646" class="buy-now">Buy Now</a>
+            <a href="#" class="buy-now">Buy Now</a>
         </div>
 
         <p class="store-address">Visit our store: anannananana</p>
